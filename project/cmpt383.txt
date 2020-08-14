@@ -90,7 +90,7 @@ Thus, the decision to use python for web scraping.
 As Visuals tend to be more intuitive and easier to understand, I wanted to visualize the data pulled from web scraping.
 I ended up using Julia as it has a Plots library which I had some experience with when doing assignment 2.
 
-To compress the results, I utilized C/C++ as it is one of the languages that I'm most comfortable with and also one of the most optimizaed for this task.
+To compress the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
 This, along with the integration of languages were the toughest part, having to understand extract information from png and reconstructing it in another format.
 Though the raw code is rather short, a significant anount of time was needed to find and understand the required functions of the libraries. 
 Resources which helped in understanding: 
