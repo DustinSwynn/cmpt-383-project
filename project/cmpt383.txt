@@ -25,6 +25,7 @@ produces a pie chart using web scraped data from the python script and sends the
 Next, "make convert" to complie the image processor and "./convert" to produce a variety of "pie.png" in the form of gray scaled and jpgs
 The expected output can be seen in the expected_images folder
 
+Note: feel free to delete the existing images in the project file and re-run "julia.jl", "make convert" and "./convert"
 
 More Detailed instructions on running my program: 
     Note: instructions with "*" dont need to be ran if vagrant provision properly executed the contents of "default.rb"
