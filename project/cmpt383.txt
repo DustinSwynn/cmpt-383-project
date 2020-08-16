@@ -14,18 +14,19 @@ C/C++ - Some alteration(filters) of image and Conversion to jpg of Visualized Da
 
 ######################## Instructions ########################
 
-To access my project, turn on a vm by using "vagrant up", "vagrant provision" and "varant ssh"
+To access my project, turn on a vm by using "vagrant up" and "varant ssh" to access the vm's terminal
 
 Once in the terminal of the vm, "cd project/project" to access my project folder
 
-Then, "julia plot.jl" which will run a julia script that calls a python script which eventually --- This takes quite awhile as julia needs to preload the lobraries everytime.
-produces a pie chart using web scraped data from the python script and sends the pie chart to a "pie.png" files
+Then, "julia setup.jl" to install 3 julia libraries, two for plotting and another for calling python functions/scripts. 
+Continuing, "julia plot.jl" will run a julia script that calls a python script within itself that 
+produces a pie chart using web scraped data from the python script and sends the pie chart to a "pie.png" files - Note: This takes quite awhile as julia needs to preload the libraries everytime.
 
-Next, "gcc convert.c -o convert -lm" to complie the image processor and "./convert" to produce a variety of "pie.png" in the form of gray scaled and jpgs
+Next, "make convert" to complie the image processor and "./convert" to produce a variety of "pie.png" in the form of gray scaled and jpgs
 The expected output can be seen in the expected_images folder
 
 
-More Detailed instructions: 
+More Detailed instructions on running my program: 
     Note: instructions with "*" dont need to be ran if vagrant provision properly executed the contents of "default.rb"
     /////// install Python library ///////
     *sudo apt install python*
@@ -54,7 +55,7 @@ More Detailed instructions:
     *sudo apt install zlib1g*
     //////////////////////////////
 
-    gcc convert.c -o convert -lm
+    make convert
     ./convert 
 
     -> there will now be the 4 images in the same directory as the source files, namely,
@@ -104,4 +105,5 @@ Potential Improvements/Extensions:
  - Scrape from more sites than Github
  - more types of graphs/charts
  - more descriptive chart
+ - finish the compression
 ==============================================================

@@ -3,14 +3,8 @@
 using Plots # need to "using Pkg" and Pkg.add("Plots")
 using PyCall
 
-#run(`python scrape.py`)
 
-#rawOutput = read(`python scrape.py`, String)
-
-#println(rawOutput)
-#println(rawOutput[1])
-#println(rawOutput[20])
-#println(Int(rawOutput[20]))
+github_url = "https://github.com/search?q=created%3A2020-07-01+created%3A2020-07-31&type=Repositories"
 
 #=
 py"""
@@ -54,6 +48,16 @@ def scrape (url):
 
 #a = getVal(github_url)
 
+println("Python Scraped Data:")
+
+run(`python3 scrape.py`)
+
+rawOutput = read(`python3 scrape.py`, String)
+
+#println(rawOutput)
+#println(rawOutput[1])
+#println(rawOutput[20])
+#println(Int(rawOutput[20]))
 
 languageArr = ["JavaScript","HTML","Python","Java","CSS","Jupyter Notebook","Ruby","TypeScript","C#","PHP"] #a[1]
 numArr = [22783,19483,11139,10274,5586,4769,4753,3894,3496,3264] #a[0]
@@ -68,4 +72,6 @@ p = pie(languageArr,numArr2, title = "Popularity of Programming Languages", l = 
 
 #view = histogram(numArr, label = languageArr)
 
+println("""Pie Chart will be saved as 'pie.png'""")
+ENV["GKSwstype"]="100"
 savefig("pie.png")

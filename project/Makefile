@@ -4,10 +4,10 @@ LDFLAGS=-lm -lz
 
 
 convert: convert.o
-	$(CC) convert.o -o convert
+	$(CC) convert.o -o convert -lm
 
 convert.o: convert.c
-	$(CC) $(CFLAGS) convert.c
+	$(CC) $(CFLAGS) convert.c 
 
 compress: compress.o
 	$(CC) compress.o -o compress $(LDFLAGS)

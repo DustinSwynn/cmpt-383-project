@@ -57,6 +57,8 @@ execute 'wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.2-l
 execute 'tar -xvzf julia-1.4.2-linux-x86_64.tar.gz'
 execute 'sudo cp -r julia-1.4.2 /opt/'
 execute 'sudo ln -s /opt/julia-1.4.2/bin/julia /usr/local/bin/julia'
+execute 'sudo apt-get install libqt5gui5'
+execute 'sudo apt-get install qt5-default'
 #execute 'cd project/project'
 #execute 'julia setup.jl'
 
