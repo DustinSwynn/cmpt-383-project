@@ -75,13 +75,13 @@ The Raw data and visualized data are then passed onto C++ as files that are comp
 
 I used PyCall as a method to call my python script to scrape the web for relevent data directly from my Julia script.
 Note: It did not work out as expected as the bs4 library could not be found within julia, hence the bruteforce data entry. 
-(Running the Python script independently gives teh expected results)
+(Running the Python script independently gives the expected results)
 I'm not too sure why this problems arise, but was not able to find a solution online after 
 spending several hours iusolating the problem and looking for soluitions.
 
 The C++ program simply looks for a png named "pie.png" located in the same library produced by my Julia script to produce similar jpg and filtered versions of pie.png
 
-"compress.c" was my attempt to compress the resulting 4 images in the file but came across a link error that I wasnt able to fix after two hours.
+"compress.c" was my attempt to compress the resulting 4 images in the file but came across a link error that I wasnt able to fix after several hours.
 
 ==============================================================
 
@@ -97,7 +97,8 @@ I ended up using Julia as it has a Plots library which I had some experience wit
 To compress the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
 This, along with the integration of languages were the toughest part, having to understand extract information from png and reconstructing it in another format.
 Though the raw code is rather short, a significant anount of time was needed to find and understand the required functions of the libraries. 
-Resources which helped in understanding: 
+As most of my problems were more with the integration of my programs, there were no specific references but various forums of the likes of stack overflow.
+Links of libraries are commented in the code.
 
 Throughout the project, Python seems to be able to do all tasks adequately, potentially rendering the use of other languages pointless.
 In my case, I do not think the use of three languages were justified as the run time and the amount of time spent figuring out how to integrate 
