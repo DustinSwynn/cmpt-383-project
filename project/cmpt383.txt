@@ -61,6 +61,13 @@ More Detailed instructions on running my program:
     -> there will now be the 4 images in the same directory as the source files, namely,
     "pie.png","pie.jpg","pie_gray.png" and "pie_gray.jpg"
 
+    sudo apt-get install zlib1g-dev - because this for some reason doesnt execute as stated in the ruby file.
+    make compress
+    ./compress
+
+-> there should now be an dditional 8 files, 4 compressed versions of the files made my convert and 4 decompressed versions for viewing.
+In practice, we would store the 4 compressed versions and decompress them when we want to view it.
+
 ==============================================================
 
 
@@ -76,9 +83,9 @@ Note: It did not work out as expected as the bs4 library could not be found with
 I'm not too sure why this problems arise, but was not able to find a solution online after 
 spending several hours iusolating the problem and looking for soluitions.
 
-The C++ program simply looks for a png named "pie.png" located in the same library produced by my Julia script to produce similar jpg and filtered versions of pie.png
+The C convert program simply looks for a png named "pie.png" located in the same library produced by my Julia script to produce similar jpg and filtered versions of pie.png
 
-"compress.c" was my attempt to compress the resulting 4 images in the file but came across a link error that I wasnt able to fix after two hours.
+Compress on the other hand, has two functions that allows compression and decompression of any image. in my case I used both compress and decompression to check its functionality
 
 ==============================================================
 
@@ -91,10 +98,11 @@ Thus, the decision to use python for web scraping.
 As Visuals tend to be more intuitive and easier to understand, I wanted to visualize the data pulled from web scraping.
 I ended up using Julia as it has a Plots library which I had some experience with when doing assignment 2.
 
-To compress the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
+To compress and convert the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
 This, along with the integration of languages were the toughest part, having to understand extract information from png and reconstructing it in another format.
 Though the raw code is rather short, a significant anount of time was needed to find and understand the required functions of the libraries. 
-Resources which helped in understanding: 
+As most of my problems were more with the integration of my programs, there were no specific references but various forums of the likes of stack overflow.
+Links of libraries are commented in the code.
 
 Throughout the project, Python seems to be able to do all tasks adequately, potentially rendering the use of other languages pointless.
 In my case, I do not think the use of three languages were justified as the run time and the amount of time spent figuring out how to integrate 

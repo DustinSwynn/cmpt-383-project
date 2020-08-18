@@ -59,6 +59,7 @@ execute 'sudo cp -r julia-1.4.2 /opt/'
 execute 'sudo ln -s /opt/julia-1.4.2/bin/julia /usr/local/bin/julia'
 execute 'sudo apt-get install libqt5gui5'
 execute 'sudo apt-get install qt5-default'
+execute 'sudo apt-get install zlib1g-dev'
 #execute 'cd project/project'
 #execute 'julia setup.jl'
 
