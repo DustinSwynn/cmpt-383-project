@@ -27,7 +27,11 @@ The python code can also be ran independently by "python3 scrape.py"
 Next, "make convert" to complie the image processor and "./convert" to produce a variety of "pie.png" in the form of gray scaled and jpgs
 The expected output can be seen in the expected_images folder
 
-Note: feel free to delete the existing images in the project file and re-run "julia.jl", "make convert" and "./convert"
+"sudo apt-get install zlib1g-dev" to download zlib as it did default.rb did not install it properly in my case
+"make compress" to complie and "./compress" to compress the four image files and decompress it to see the results.
+In practice, we would store the 4 compressed versions and decompress them when we want to view it.
+
+
 
 More Detailed instructions on running my program: 
     Note: instructions with "*" dont need to be ran if vagrant provision properly executed the contents of "default.rb"
@@ -63,6 +67,13 @@ More Detailed instructions on running my program:
 
     -> there will now be the 4 images in the same directory as the source files, namely,
     "pie.png","pie.jpg","pie_gray.png" and "pie_gray.jpg"
+    
+    sudo apt-get install zlib1g-dev - because this for some reason doesnt execute as stated in the ruby file.
+    make compress
+    ./compress
+
+    -> there should now be an dditional 8 files, 4 compressed versions of the files made my convert and 4 decompressed versions for viewing.
+    In practice, we would store the 4 compressed versions and decompress them when we want to view it.
 
 ==============================================================
 
