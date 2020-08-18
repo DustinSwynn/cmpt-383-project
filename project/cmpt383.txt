@@ -6,7 +6,7 @@ Python - Webscraping with BeautifulSoup
 
 Julia - for Plotting the Data
 
-C/C++ - Some alteration(filters) of image and Conversion to jpg of Visualized Data
+C - Some alteration(filters) of image and Conversion to jpg of Visualized Data + Compression/Decompression of images
 
 ==============================================================
 
@@ -20,14 +20,14 @@ Once in the terminal of the vm, "cd project/project" to access my project folder
 
 Then, "julia setup.jl" to install 3 julia libraries, two for plotting and another for calling python functions/scripts. 
 Continuing, "julia plot.jl" will run a julia script that calls a python script within itself that 
-produces a pie chart using web scraped data from the python script and sends the pie chart to a "pie.png" files - Note: This takes quite awhile as julia needs to preload the libraries.(In my case, ~ 9 minutes)
+produces a pie chart using web scraped data from the python script and sends the pie chart to a "pie.png" file - Note: This takes quite awhile as julia needs to preload the libraries.(In my case, ~ 9 minutes)
 
-The python code can also be ran independently by "python3 scrape.py"
+The python code can also be ran independently by "python3 scrape.py" to check the output of the web scrape
 
 Next, "make convert" to complie the image processor and "./convert" to produce a variety of "pie.png" in the form of gray scaled and jpgs
 The expected output can be seen in the expected_images folder
 
-"sudo apt-get install zlib1g-dev" to download zlib as it did default.rb did not install it properly in my case
+"sudo apt-get install zlib1g-dev" to download zlib as the execute in default.rb did not install it properly.
 "make compress" to complie and "./compress" to compress the four image files and decompress it to see the results.
 In practice, we would store the 4 compressed versions and decompress them when we want to view it.
 
@@ -75,6 +75,8 @@ More Detailed instructions on running my program:
     -> there should now be an dditional 8 files, 4 compressed versions of the files made my convert and 4 decompressed versions for viewing.
     In practice, we would store the 4 compressed versions and decompress them when we want to view it.
 
+
+    The 12 image files should be identical to the ones in expected_images
 ==============================================================
 
 
@@ -90,9 +92,9 @@ Note: It did not work out as expected as the bs4 library could not be found with
 I'm not too sure why this problems arise, but was not able to find a solution online after 
 spending several hours iusolating the problem and looking for soluitions.
 
-The C++ program simply looks for a png named "pie.png" located in the same library produced by my Julia script to produce similar jpg and filtered versions of pie.png
+The convert program simply looks for a png named "pie.png" located in the same library produced by my Julia script to produce similar jpg and filtered versions of pie.png
 
-"compress.c" was my attempt to compress the resulting 4 images in the file but came across a link error that I wasnt able to fix after several hours.
+The compress program uses compress and decompression algorithms from facebok's zlib. Which in practice, only the decompressed version would be stored in archive
 
 ==============================================================
 
@@ -105,7 +107,7 @@ Thus, the decision to use python for web scraping.
 As Visuals tend to be more intuitive and easier to understand, I wanted to visualize the data pulled from web scraping.
 I ended up using Julia as it has a Plots library which I had some experience with when doing assignment 2.
 
-To compress the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
+To convert and compress the results, I utilized C as it is one of the languages that I have most experience with and also one of the most optimizaed for this task.
 This, along with the integration of languages were the toughest part, having to understand extract information from png and reconstructing it in another format.
 Though the raw code is rather short, a significant anount of time was needed to find and understand the required functions of the libraries. 
 As most of my problems were more with the integration of my programs, there were no specific references but various forums of the likes of stack overflow.
@@ -120,5 +122,4 @@ Potential Improvements/Extensions:
  - Scrape from more sites than Github
  - more types of graphs/charts
  - more descriptive chart
- - finish the compression
 ==============================================================
